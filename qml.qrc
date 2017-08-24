@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>qtquickcontrols2.conf</file>
+        <file>leonado.jpg</file>
+        <file>PanelComponent.qml</file>
+        <file>PanelComponentForm.ui.qml</file>
+        <file>ActivityPage.qml</file>
+        <file>ActivityPageForm.ui.qml</file>
+        <file>imageIcon.png</file>
+    </qresource>
+</RCC>
