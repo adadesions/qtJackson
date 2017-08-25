@@ -15,7 +15,6 @@ ApplicationWindow {
         width: 200
         height: 728
     }
-
        Rectangle {
            id: rectangle
            x: 0

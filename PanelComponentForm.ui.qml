@@ -4,6 +4,8 @@ import QtQuick.Controls 2.1
 Item {
     width: 200
     height: 728
+    property alias num_brush_size: num_brush_size
+    property alias  slider_brush_size:  slider_brush_size
     
     Rectangle {
         id: rectangle
@@ -41,7 +43,7 @@ Item {
                 width: 151
                 height: 24
                 color: "#616161"
-                text: qsTr("0")
+                text: leftCV.strMarkers
                 font.family: "Courier"
                 verticalAlignment: Text.AlignVCenter
                 font.bold: false
@@ -77,11 +79,12 @@ Item {
         Text {
             id: text_filename1
             x: 35
-            y: 60
+            y: 62
             width: 151
-            height: 24
+            height: 25
             color: "#616161"
             text: leftCV.shortname
+            wrapMode: Text.WordWrap
             font.bold: false
             font.family: "Courier"
             verticalAlignment: Text.AlignVCenter
@@ -128,11 +131,12 @@ Item {
             Text {
                 id: text_filename2
                 x: 17
-                y: 21
+                y: 24
                 width: 151
                 height: 24
                 color: "#616161"
                 text: rightCV.shortname
+                wrapMode: Text.WordWrap
                 font.family: "Courier"
                 verticalAlignment: Text.AlignVCenter
                 font.bold: false
@@ -169,7 +173,7 @@ Item {
                 width: 151
                 height: 24
                 color: "#616161"
-                text: qsTr("0")
+                text: rightCV.strMarkers
                 font.family: "Courier"
                 verticalAlignment: Text.AlignVCenter
                 font.bold: false
@@ -210,11 +214,26 @@ Item {
         id: label_brush_size
         x: 32
         y: 413
+        width: 87
+        height: 20
         color: "#505050"
-        text: qsTr("Brush Size")
+        text: qsTr("Brush Size :")
         font.bold: true
         font.family: "Times New Roman"
         font.pixelSize: 18
+    }
+
+    Text {
+        id: num_brush_size
+        x: 120
+        y: 414
+        width: 40
+        height: 21
+        color: "#505050"
+        text: store.brushSize
+        verticalAlignment: Text.AlignVCenter
+        horizontalAlignment: Text.AlignHCenter
+        font.pixelSize: 12
     }
 
     Slider {
@@ -223,7 +242,10 @@ Item {
         y: 432
         width: 160
         height: 48
-        value: 0.5
+        to: 20
+        from: 5
+        stepSize: 1
+        value: store.brushSize
     }
 
     Button {
@@ -239,6 +261,7 @@ Item {
         checkable: true
         highlighted: false
     }
+
 
 
     

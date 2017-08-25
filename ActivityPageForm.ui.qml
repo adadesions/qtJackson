@@ -10,6 +10,8 @@ Item {
     property alias button_openfile1: button_openfile1
     property alias button_openfile2: button_openfile2
     property alias text1: text1
+    property alias mouseArea_left: mouseArea_left
+    property alias canvas_left: canvas_left
 
 
     Rectangle {
@@ -130,6 +132,16 @@ Item {
             height: 540
             fillMode: Image.PreserveAspectCrop
             source: "leonado.jpg"
+            MouseArea {
+                id: mouseArea_left
+                anchors.fill: parent
+                acceptedButtons: Qt.LeftButton | Qt.RightButton
+              }
+            Canvas {
+                id: canvas_left
+                anchors.fill: parent
+            }
+
         }
 
         Image {

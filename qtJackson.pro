@@ -3,7 +3,8 @@ QT += qml quick
 CONFIG += c++11
 
 SOURCES += main.cpp \
-    cv.cpp
+    cv.cpp \
+    store.cpp
 
 RESOURCES += \
     qml.qrc
@@ -38,4 +39,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 DISTFILES +=
 
 HEADERS += \
-    cv.hpp
+    cv.hpp \
+    store.hpp
